@@ -1,23 +1,47 @@
-var test = "3";
-console.log(test);
-$("#box1").css('background-color', 'yellow');
-$("#box1").css({
-    'background-color': 'yellow'
-});
-/* $("#box1").hover(function () {
-    console.log("마우스 올라감");
-}, function () {
-    console.log("마우스 내려감");
-}); */
-//ES5
-document.getElementById("box1").addEventListener("click",function(){
+// $("#box1").css("background-color", "#ff0");
+
+
+/* //ES5
+document.getElementById("box1").addEventListener("click", function(){
+	
 });
 //ES6
-document.querySelector("#box1").addEventListener("click",function(){
+document.querySelector("#box1").addEventListener("click", functin(){
+	
 });
-$("#box1").on("mouseenter",function(){
-    console.log("마우스 올라감");
+*/
+var color = '';
+var r = '';
+var g = '';
+var b = '';
+for(var i=0; i<1500; i++) {
+	r = Math.floor(Math.random() * 255);
+	g = Math.floor(Math.random() * 255);
+	b = Math.floor(Math.random() * 255);
+	color = 'style="background-color:rgb('+r+','+g+','+b+')"';
+	$(".box_wrap").append('<div class="box" '+color+'></div>');
+}
+
+
+
+$(".box").css({"background-color": "#ff0"});
+$(".box").on("mouseenter", function(){
+	$(this).css({"animation-name":"bgAni"});	
 });
-$("#box1").on("mouseleave",function(){
-    console.log("마우스 내려감");    
+$(".box").on("mouseleave", function(){
+	$(this).css({"animation-name":"bgAniBack"});
 });
+
+
+
+
+
+/* 
+var arr = [];
+var arr1 = new Array();
+arr1.push("1");
+arr1.push("3");
+arr1.push("5");
+arr1.push("7");
+console.log(arr1);
+ */
